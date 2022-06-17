@@ -36,6 +36,11 @@ app.get('/ab*cd', function (req, res) {
     res.send('Page Pattern Match');
 })
 
+app.get('/', function (req, res) {
+    console.log("Got a GET request for the homepage");
+    const userCount = 10;
+    res.send(`Hello GET. Users are: ${userCount}`);
+})
 
 var server = app.listen(8081, function () {
     var host = server.address().address
